@@ -18,7 +18,7 @@ namespace ramen_map_viewer_android
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.Main);
         }
     }
 }
