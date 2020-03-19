@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:versionCode="1"
+  android:versionName="1.0"
+  package="com.companyname.ramen_map_viewer_android">
+
+  <uses-sdk />
+
+  <!-- 1権限の設定 -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+  <!-- 2OpenGL ESの設定 -->
+  <uses-feature
+    android:glEsVersion="0x00020000"
+    android:required="true"/>
+
+  <application android:label="RamenMapViewer">
+
+    <!-- 3APIの設定 -->
+    <meta-data
+      android:name="com.google.android.gms.version"
+      android:value="@integer/google_play_services_version" />
+    <meta-data
+      android:name="com.google.android.maps.v2.API_KEY"
+      android:value="AIzaSyDif1jNAz9Mq1E01a-E9-rUdlqxnSLFBDA" />
+
+  </application>
+</manifest>
