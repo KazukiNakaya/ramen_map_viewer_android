@@ -68,6 +68,45 @@ namespace ramen_map_viewer_android
                     45f,     // 方位
                     30f)));  // 傾き
             };
+
+            Marker marker1 = null;
+            Marker marker2 = null;
+
+            FindViewById<Button>(Resource.Id.buttonAddMarker).Click += (sender, e) =>
+            {
+                if (marker1 == null)
+                {
+                    marker1 = gMap.AddMarker(new MarkerOptions()
+                      .SetTitle("東京スカイツリー")
+                      .SetSnippet("東京都墨田区押上１−１−２")
+                      .SetPosition(new LatLng(35.710063d, 139.8107d))
+                      .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(
+                        BitmapDescriptorFactory.HueAzure))  //<--1
+                    );
+                }
+
+                if (marker2 == null)
+                {
+                    marker2 = gMap.AddMarker(new MarkerOptions()
+                      .SetTitle("東京タワー")
+                      .SetSnippet("東京都港区芝公園４−２−８")
+                      .SetPosition(new LatLng(35.65858, 139.745433))
+                      .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(
+                        BitmapDescriptorFactory.HueOrange))  //<--2
+                    );
+                }
+
+
+            };
+
+            FindViewById<Button>(Resource.Id.buttonDeleteMarker).Click += (sender, e) =>
+            {
+                if (marker1 != null)
+                {
+                    marker1.Remove();
+                    marker1 = null;
+                }
+            };
         }
     }
 }
