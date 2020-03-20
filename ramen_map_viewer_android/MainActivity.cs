@@ -41,8 +41,6 @@ namespace ramen_map_viewer_android
             var mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
 
-            //var map = mapFragment.GetMapAsync(this);  // <--1
-
             FindViewById<Button>(Resource.Id.buttonCenter).Click += (sender, e) =>
             {
                 gMap.AnimateCamera(CameraUpdateFactory.NewLatLng(
@@ -95,8 +93,6 @@ namespace ramen_map_viewer_android
                         BitmapDescriptorFactory.HueOrange))  //<--2
                     );
                 }
-
-
             };
 
             FindViewById<Button>(Resource.Id.buttonDeleteMarker).Click += (sender, e) =>
